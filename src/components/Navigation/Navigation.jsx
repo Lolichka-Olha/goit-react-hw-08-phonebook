@@ -8,8 +8,14 @@ export default function Navigation() {
   return (
     <div>
       <nav>
-        <Link to="/">Home</Link>
-        {isLogin && <Link to="/contacts">Contacts</Link>}
+        {/* <Link to="/">Home</Link>
+        {isLogin && <Link to="/contacts">Contacts</Link>} */}
+
+        {isLogin ? (
+          <Link to="/contacts">Contacts</Link>
+        ) : (
+          <Link to="/">Home</Link>
+        )}
       </nav>
     </div>
   );

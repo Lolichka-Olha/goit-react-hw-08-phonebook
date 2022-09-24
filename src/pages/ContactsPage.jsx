@@ -2,7 +2,7 @@ import { PhonebookContainer } from '../components/App/App.styled';
 import ContactForm from '../components/ContactForm/ContactForm';
 import ContactList from '../components/ContactList/ContactList';
 import Filter from '../components/Filter/Filter';
-import { ToastContainer } from 'react-toastify';
+// import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 export default function ContactsPage() {
@@ -13,7 +13,6 @@ export default function ContactsPage() {
       <h2>Contacts</h2>
       <Filter />
       <ContactList />
-      <ToastContainer position="top-center" autoClose={1500} />
     </PhonebookContainer>
   );
 }

@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
-import { HeaderContainer, Header } from './NavBar.styled';
+import { WrapperContainer, Header } from './NavBar.styled';
 import authSelectors from '../../redux/auth/auth-selectors';
 import Navigation from '../Navigation/Navigation';
 import UserMenue from '../UserMenu/UserMenu';
@@ -12,7 +12,7 @@ export default function NavBar() {
   const isLogin = useSelector(authSelectors.isAuth);
   return (
     <div>
-      <HeaderContainer>
+      <WrapperContainer>
         <Header>
           <Navigation />
           {isLogin ? <UserMenue /> : <AuthNav />}
@@ -20,7 +20,7 @@ export default function NavBar() {
         <Suspense fallback={<Loader />}>
           <Outlet />
         </Suspense>
-      </HeaderContainer>
+      </WrapperContainer>
     </div>
   );
 }

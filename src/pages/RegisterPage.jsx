@@ -97,7 +97,7 @@ export default function RegisterPage() {
           variant="contained"
           size="small"
           sx={{
-            marginTop: '10px',
+            marginTop: '20px',
           }}
           type="submit"
         >

@@ -15,14 +15,16 @@ export const Btn = styled.button`
   padding: 6px 12px;
   font-size: 18px;
   font-weight: 500;
-  background-color: #fff;
-  border: 1px solid #c2c2c2;
+  background-color: #3f51b5;
+  border: none;
   border-radius: 5px;
+  color: #fff;
+  box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
+    0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0, 0, 0, 0.12);
 
   cursor: pointer;
   &:hover,
   &:focus {
-    background-color: #c2c2c2;
-    color: #fff;
+    color: black;
   }
 `;

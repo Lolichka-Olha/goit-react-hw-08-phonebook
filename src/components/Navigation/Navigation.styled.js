@@ -13,8 +13,7 @@ export const Link = styled(NavLink)`
     color: #3f51b5;
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     color: #3f51b5;
   }
   &:not(:last-of-type) {

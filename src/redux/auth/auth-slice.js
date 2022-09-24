@@ -5,30 +5,38 @@ const initialState = {
   user: { name: null, email: null },
   token: null,
   isLogin: false,
+  isCurrentUser: false,
 };
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
   extraReducers: {
-    [authOperations.register.fulfilled](state, action) {
-      state.user = action.payload.user;
-      state.token = action.payload.token;
+    [authOperations.register.fulfilled](state, { payload }) {
+      state.user = payload.user;
+      state.token = payload.token;
       state.isLogin = true;
     },
-    [authOperations.logIn.fulfilled](state, action) {
-      state.user = action.payload.user;
-      state.token = action.payload.token;
+    [authOperations.logIn.fulfilled](state, { payload }) {
+      state.user = payload.user;
+      state.token = payload.token;
       state.isLogin = true;
     },
-    [authOperations.logOut.fulfilled](state, action) {
+    [authOperations.logOut.fulfilled](state) {
       state.user = { name: null, email: null };
       state.token = null;
       state.isLogin = false;
     },
-    [authOperations.current.fulfilled](state, action) {
-      state.user = action.payload;
+    [authOperations.currentUser.pending](state) {
+      state.isCurrentUser = true;
+    },
+    [authOperations.currentUser.fulfilled](state, { payload }) {
+      state.user = payload;
       state.isLogin = true;
+      state.isCurrentUser = false;
+    },
+    [authOperations.currentUser.rejected](state) {
+      state.isCurrentUser = false;
     },
   },
 });

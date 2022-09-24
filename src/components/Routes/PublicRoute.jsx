@@ -4,5 +4,5 @@ import authSelectors from '../../redux/auth/auth-selectors';
 
 export default function PublicRoute({ restricted }) {
   const isLogin = useSelector(authSelectors.isAuth);
-  return isLogin ? <Navigate to="/home" /> : <Outlet />;
+  return isLogin ? <Navigate to="/contacts" /> : <Outlet />;
 }
